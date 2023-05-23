@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function Footer(){
-    const currentYear = new Date().getFullYear();
-
-    return (
-        <footer>
-            <p>Copywrite &copy; {currentYear}</p>
-        </footer>
-    )
+function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer>
+      <p>Copyright &copy; {year}</p>
+    </footer>
+  );
 }
+
+export default Footer;
