@@ -1,16 +1,16 @@
+// Importing Router from express
 const {Router} = require("express");
+// Creating an instance of Router
 const router = Router();
 
-const {getNote, saveNote, updateNote, deleteNote} = require ("../controller/noteController.js");
+// Importing controller functions
+const {getAllNotes, saveNote, updateNote, deleteNote} = require ("../controller/noteController.js");
 
-router.get("/", getNote)
+// Setting up routes for note operations
+router.get("/", getAllNotes)
 router.post("/save", saveNote);
 router.post("/update", updateNote);
 router.post("/delete", deleteNote);
 
-/////// the top code is the same as below except we are calling our routes from the controller.js
-// router.get("/", (req, res) =>{
-//     res.json({message: "Hello from Server!!!"})
-// })
-
+// Exporting router to be used in other parts of the application
 module.exports = router;
